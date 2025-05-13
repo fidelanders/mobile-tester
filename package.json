@@ -1,0 +1,31 @@
+{
+  "name": "mobile-tester-server",
+  "version": "1.0.0",
+  "description": "Mobile responsiveness testing server",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev-all": "concurrently \"npm run dev\" \"npm run client\"",
+    "logs": "tail -f server/logs/combined.log",
+    "errors": "tail -f server/logs/error.log",
+    "clean-logs": "rm -rf server/logs/*.log"
+  },
+  "dependencies": {
+    "chrome-launcher": "^0.15.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "pdfkit": "^0.13.0",
+    "puppeteer": "^24.8.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "uuid": "^9.0.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.2"
+  }
+}

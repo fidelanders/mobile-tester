@@ -1,0 +1,27 @@
+/* client/src/error-styles.css */
+.error-fallback {
+  padding: 2rem;
+  text-align: center;
+  background: #fff8f8;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.refresh-btn {
+  background: #3f51b5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.alert-danger {
+  background: #fff8f8;
+  border-left: 4px solid #ff5252;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
