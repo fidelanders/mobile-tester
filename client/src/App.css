@@ -1,4 +1,4 @@
-/* Main App Styling */
+Main App Styling
 .app-container {
   min-height: 100vh;
   background-color: #f8f9fa;
@@ -181,4 +181,294 @@
   letter-spacing: 0.05em;
   box-sizing: border-box;
   transition: all 0.3s ease;
+}
+
+
+
+/*********************
+ * Responsive Design
+ *********************/
+
+ /* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.responsive-tester {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 40px 20px 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header .highlight {
+  color: #e63946;
+}
+
+.header p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.input-group {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.url-input, .device-select, .test-button {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.url-input {
+  width: 300px;
+  max-width: 90%;
+}
+
+.device-select {
+  min-width: 180px;
+}
+
+.test-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.test-button:hover {
+  background-color: #d62828;
+}
+
+.device-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.device-card {
+  background: white;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden;
+}
+
+.device-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.device-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+}
+
+.device-card p {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 4px 10px;
+  background: #dee2e6;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.actions {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.action-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #5a6268;
+}
+
+.footer {
+  background-color: #343a40;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: left;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #ccc;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  border-top: 1px solid #495057;
+}
+
+
+/* Media Queries for Device Simulations */
+
+/* iPhone X (375x812) and iPhone 11 Pro */
+@media only screen and (max-width: 375px) {
+  .url-input {
+    width: 90%;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .device-card {
+    width: 90%;
+  }
+
+  .action-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Samsung Galaxy S10 (360x760) */
+@media only screen and (max-width: 360px) {
+  .url-input {
+    width: 100%;
+  }
+
+  .test-button, .device-select {
+    width: 100%;
+  }
+
+  .device-card {
+    width: 95%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* iPad Mini and Tablets (768px) */
+@media only screen and (max-width: 768px) {
+  .device-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .url-input,
+  .device-select,
+  .test-button {
+    width: 90%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small Desktop or Large Tablet */
+@media only screen and (max-width: 1024px) {
+  .device-card {
+    width: 45%;
+  }
 }

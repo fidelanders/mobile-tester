@@ -11,6 +11,7 @@ const logger = require('./server/utils/logger');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
 // CORS Configuration
 const corsOptions = {
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
@@ -21,6 +22,9 @@ app.use(cors(corsOptions));
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from the React build
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // API Endpoints
 app.post('/api/test', async (req, res) => {
@@ -89,6 +93,9 @@ app.get('/api/screenshot/:testId/:filename', (req, res) => {
 app.use('/api/report', express.static(path.join(__dirname, 'reports')));
 
 // Serve React app in production
+
+
+// Catch-all to send React's index.html for frontend routes
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
   
